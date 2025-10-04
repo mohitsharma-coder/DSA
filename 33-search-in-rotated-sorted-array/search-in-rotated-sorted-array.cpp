@@ -9,14 +9,17 @@ public:
 
             if(nums[mid]==target)
             return mid;
-            else if(nums[start]<=nums[mid]){
-                if(nums[mid]>target & nums[start]<=target)
+
+            else if(nums[start]<=nums[mid]) //check first part sorted or not
+            {
+                if(nums[start]<=target && nums[mid]>target   )
                 end=mid-1;
                 else
                 start=mid+1;
             }
-            else{
-            if(nums[mid]<target && nums[end]>=target)
+            else
+            {
+            if(nums[mid]<target && nums[end]>=target)//check second part sorted or not
             start=mid+1;
             else
             end =mid-1;
