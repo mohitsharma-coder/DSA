@@ -3,13 +3,13 @@ public:
     int numRescueBoats(vector<int>& people, int limit) {
         int ans = 0;
         sort(people.begin(), people.end());
-        int i = 0, j = people.size() - 1;
+        int start = 0, end = people.size() - 1;
 
-        while (i <= j) {
-            if (people[i] + people[j] <= limit) {
-                ++i;
+        while (start <= end) {
+            if (people[start] + people[end] <= limit) {
+                ++start;
             }
-            --j;
+            --end;
             ++ans;
         }
 
