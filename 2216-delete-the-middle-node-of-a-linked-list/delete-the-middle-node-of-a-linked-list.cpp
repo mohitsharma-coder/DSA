@@ -16,14 +16,16 @@ public:
 
         ListNode* slow = head;
         ListNode* fast = head;
-        ListNode* prev = slow;
+        //ListNode* prev = slow;
 
-        while(fast!=NULL && fast->next!=NULL){
-            prev = slow;
+        //while(fast!=NULL && fast->next!=NULL)
+        while(fast->next->next!=NULL && fast->next->next->next!=NULL){
+           // prev = slow;
             slow = slow->next;
             fast = fast->next->next;
         }
-        prev->next = prev->next->next;
+        //prev->next = prev->next->next;
+        slow->next = slow->next->next;
         return head;
     }
 };
